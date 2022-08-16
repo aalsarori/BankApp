@@ -1,0 +1,52 @@
+﻿@model BradsBank.Views.Home.RegisterModel
+@{
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BradsBank</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BradsBank</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<div class="text-center">
+    <h2>Register</h2>
+
+    @if (Model.GetError == "MistmatchedPassword")
+    {
+        <p style="color: red"><b>The passwords did not match, please try again.</b></p>
+        <br />
+    }
+    else if (Model.GetError == "UserExists")
+    {
+        <p style="color: red"><b>The user already exists, please try again.</b></p>
+        <br />
+    }
+
+    <form action="~/Home/ValidateRegistration">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="text" id="password" name="password"><br>
+        <label for="confirmed">Confirm Password:</label><br>
+        <input type="text" id="confirmed" name="confirmed"><br><br>
+        <input type="submit" value="Submit">
+        <br />
+    </form>
+
+</div>

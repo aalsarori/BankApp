@@ -1,0 +1,102 @@
+﻿@page
+@model BradsBank.Views.Home.TransactionsModel
+@{
+}
+
+<script>
+
+</script>
+
+<!--
+<?php
+$user = 'root';
+$password = '';
+$database = '';
+$servername='localhost:3306';
+
+$mysqli = new mysqli($servername, $user,
+                $password, $database);
+
+// Checking for connections
+if ($mysqli->connect_error) {
+    die('Connect Error (' .
+    $mysqli->connect_errno . ') '.
+    $mysqli->connect_error);
+}
+
+// SQL query to select data from database
+$sql = " SELECT * FROM ... ORDER BY score DESC ";
+$result = $mysqli->query($sql);
+$mysqli->close();
+?>
+-->
+<style>
+    table, th, td {
+        border: 1px solid black;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        height: 30px;
+        width: 700px;
+    }
+</style>
+
+<div class="text-center">
+    <section>
+        <h1>Transactions</h1><br>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Account</th>
+                <th>Amount</th>
+            </tr>
+
+            <tr>
+                <td>mm/dd/yyyy</td>
+                <td>Example</td>
+                <td>Account1</td>
+                <td>$0.00</td>
+            </tr>
+
+            <tr>
+                <td>mm/dd/yyyy</td>
+                <td>Example</td>
+                <td>Account2</td>
+                <td>$0.00</td>
+            </tr>
+
+            <tr>
+                <td>mm/dd/yyyy</td>
+                <td>Example</td>
+                <td>Account1 -> Account3</td>
+                <td>$0.00</td>
+            </tr>
+
+            <!--
+            <?php
+            while($rows=$result->fetch_assoc())
+            {
+            ?>
+            <tr>
+                <td><?php echo $rows['date'];?></td>
+                <td><?php echo $rows['type'];?></td>
+                <td><?php echo $rows['account'];?></td>
+                <td><?php echo $rows['amount'];?></td>
+            </tr>
+            <?php
+            }
+            ?>
+            -->
+        </table>
+    </section>
+</div>
+<!--
+
+Based on a dropdown menu
+
+Table for each of them
+
+    Date    Type    Account     Amount
+
+-->

@@ -1,0 +1,68 @@
+﻿@page
+@model BradsBank.Views.Home.WithdrawModel
+@{
+}
+
+<script>
+    //if withdrawbtn is clicked, run SQL
+    //SELECT [withdrawAccount] FROM [accountTable] Where [account = withdrawtAccount] ...
+    //update balance
+    //update [TransactionTable]
+</script>
+
+<style>
+    form {
+        margin: 0 auto;
+        width: 500px;
+    }
+
+    label {
+        display: inline-block;
+        padding: 3px 6px;
+        text-align: right;
+        width: 150px;
+        vertical-align: top;
+    }
+
+    select {
+        width: 150px;
+    }
+
+    .amount {
+        width: 150px;
+    }
+
+    .submit {
+        margin-left: 150px;
+    }
+</style>
+
+<div class="withdraw">
+    <form action="~/Home/WithdrawMoney">
+        <input type="hidden" name="username" value="@Model.Username" />
+
+        <div class="selectaccount">
+            <p>
+                <label for="account">Withdraw From</label>
+                <select name="account" id="account">
+                    <option class="op1" value="savings">Savings</option>
+                    <option class="op2" value="checking">Checking</option>
+                    <option class="op3" value="creditcard">Credit Card</option>
+                </select>
+            </p>
+        </div>
+        <p>
+            <label for="amount">Withdraw Amount</label>
+            <input class="amount" type="text" name="amount" id="withdrawamount">
+        </p>
+        <input type="submit" class="submit" value="Withdraw">
+    </form>
+</div>
+<!--
+
+    If they choose withdraw show a certain form for withdraw
+        Dropdown menu with account options
+        Amount to withdraw
+        Submit Button
+
+-->

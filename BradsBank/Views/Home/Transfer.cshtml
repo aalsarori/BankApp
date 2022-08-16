@@ -1,0 +1,79 @@
+﻿@page
+@model BradsBank.Views.Home.TransferModel
+@{
+}
+
+<script>
+    //if transferbtn is clicked, run SQL
+    //SELECT [TransferAccount1], [TransferAccount2] FROM [Account] Where [account = transferAccount1/AND account2] ...
+    //Update CurrentBalance in Acc1 & Acc2
+    //update [TransactionTable]
+</script>
+
+<style>
+    form {
+        margin: 0 auto;
+        width: 500px;
+    }
+
+    label {
+        display: inline-block;
+        padding: 3px 6px;
+        text-align: right;
+        width: 150px;
+        vertical-align: top;
+    }
+
+    select {
+        width: 150px;
+    }
+
+    .amount {
+        width: 150px;
+    }
+
+    .submit {
+        margin-left: 150px;
+    }
+</style>
+
+<div class="transfer">
+    <form action="~/Home/TransferMoney">
+        <input type="hidden" name="username" value="@Model.Username" />
+
+        <div class="selectaccount1">
+            <p>
+                <label for="account">Transfer From</label>
+                <select name="account" id="account">
+                    <option class="op1" value="savings">Savings</option>
+                    <option class="op2" value="checking">Checking</option>
+                    <option class="op3" value="creditcard">Credit Card</option>
+                </select>
+            </p>
+        </div>
+        <div class="selectaccount2">
+            <p>
+                <label for="account">To</label>
+                <select name="account" id="account">
+                    <option class="op1" value="savings">Savings</option>
+                    <option class="op2" value="checking">Checking</option>
+                    <option class="op3" value="creditcard">Credit Card</option>
+                </select>
+            </p>
+        </div>
+        <p>
+            <label for="amount">Transfer Amount</label>
+            <input class="amount" type="text" name="amount" id="amount">
+        </p>
+        <input type="submit" class="submit" value="Transfer">
+    </form>
+</div>
+<!--
+
+    If they choose transfer show a certain form for transfer
+        Dropdown menu for Transfer From:
+        Dropdown menu for Transfer To:
+        Amount to withdraw
+        Submit
+
+-->

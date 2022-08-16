@@ -1,0 +1,45 @@
+﻿@page
+@model BradsBank.Views.Home.AccountActionsModel
+@{
+}
+
+<style>
+    .action {
+        text-align: center;
+    }
+
+    a:hover {
+        color: #275184;
+        background-color: #d6d9dc;
+        text-decoration: none;
+        width: 20px !important;
+    }
+
+    .accbtn1 {
+        background-color: #e8ebed;
+        color: #000000;
+        width: 20px !important;
+        text-decoration: none;
+    }
+
+    .accbtn2 {
+        background-color: #e8ebed;
+        color: #000000;
+        width: 20px !important;
+        text-decoration: none;
+    }
+
+    .accbtn3 {
+        background-color: #e8ebed;
+        color: #000000;
+        width: 20px !important;
+        text-decoration: none;
+    }
+</style>
+
+<div class="action">
+    <h2><a class="accbtn1" href="~/Home/Deposit?username=@Model.Username">Deposit</a></h2><br>
+    <h2><a class="accbtn1" href="~/Home/Withdraw?username=@Model.Username">Withdraw</a></h2><br>
+    <h2><a class="accbtn1" href="~/Home/Transfer?username=@Model.Username">Transfer</a></h2><br>
+    <h2><a class="accbtn1" href="~/Home/Transactions?username=@Model.Username">Transactions</a></h2><br>
+</div>
